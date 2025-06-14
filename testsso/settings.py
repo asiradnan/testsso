@@ -56,9 +56,9 @@ REST_FRAMEWORK = {
 }
 
 # WebAuthn Settings
-WEBAUTHN_RP_ID = os.environ.get('WEBAUTHN_RP_ID', 'localhost')
+WEBAUTHN_RP_ID = os.environ.get('WEBAUTHN_RP_ID', 'https://testsso.asiradnan.com')
 WEBAUTHN_RP_NAME = os.environ.get('WEBAUTHN_RP_NAME', 'WebAuthn SSO')
-WEBAUTHN_ORIGIN = os.environ.get('WEBAUTHN_ORIGIN', 'http://localhost:8000')
+WEBAUTHN_ORIGIN = os.environ.get('WEBAUTHN_ORIGIN', 'https://testsso.asiradnan.com')
 
 # SSO Settings
 SSO_SECRET_KEY = os.environ.get('SSO_SECRET_KEY', 'your-secret-key-here')
@@ -66,6 +66,11 @@ SSO_TOKEN_EXPIRY = timedelta(hours=1)
 
 # CORS Settings
 CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
