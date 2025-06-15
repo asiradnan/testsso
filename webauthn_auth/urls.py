@@ -8,4 +8,5 @@ urlpatterns = [
     path('login/verify/', views.authentication_verification, name='authentication-verify'),
     path('profile/', views.user_profile, name='user-profile'),
     path('verify-token/', views.verify_sso_token_view, name='verify-sso-token'),
+    path('clear-challenges/', views.clear_challenges, name='clear-challenges')
 ]

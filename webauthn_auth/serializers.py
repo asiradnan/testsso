@@ -14,7 +14,6 @@ class WebAuthnRegistrationChallengeSerializer(serializers.Serializer):
 
 class WebAuthnRegistrationResponseSerializer(serializers.Serializer):
     credential_id = serializers.CharField()
-    public_key = serializers.CharField()
     attestation_object = serializers.CharField()
     client_data_json = serializers.CharField()
     username = serializers.CharField()
